@@ -21,7 +21,7 @@ import pandas as pd
 col_filepath = 'some_folder/'
 raw_data = raw_data_obj(col_filepath)  # maps the folder, defaults to Pandas reader with memory map
 # Set custom read function: partial allows assigning some keywords already
-raw_data.set_read(partial(pd.read_csv(memory_map=Ture))
+raw_data.set_read(partial(pd.read_csv(memory_map=True))
 # Set custom concatenation function
 raw_data.set_conc(partial(pd.concat, axis=1))
 # Read data
@@ -31,4 +31,4 @@ print(raw_data['some_file']['some_col'].describe())  # print description of colu
 
 ## Future development
 
-[ ] allow use of column directly (requires unique columns & pre-fetching to create mapping)
+- [ ] allow use of column directly (requires unique columns & pre-fetching to create mapping)
